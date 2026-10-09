@@ -1,50 +1,60 @@
-# dexori.github.io
+# Dexuan Zheng — personal website
 
-郑德轩的个人主页。原生 HTML / CSS / JavaScript，不需要 Node、依赖安装或构建，直接用于 GitHub Pages。
+An English-language personal homepage for [dexori](https://github.com/dexori), covering robotics projects, education, and research interests.
 
-## 先看页面
+Plain HTML, CSS, and JavaScript. No dependencies or build step.
 
-用浏览器打开 `index.html` 即可。也可以在这个文件夹里执行：
+## Preview
+
+Open `index.html` in a browser. Alternatively, run this from the website directory:
 
 ```sh
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-然后访问 `http://127.0.0.1:8080`。这是本地预览，不是发布到互联网。
+Visit `http://127.0.0.1:8080`.
 
-## 发布到 dexori.github.io
+## Publish or update
 
-1. 登录 **dexori** 的 GitHub 账号，新建公开仓库，名称必须是 **dexori.github.io**。如果同名仓库已经存在，先确认其中内容，再合并，别直接覆盖。
-2. 将本文件夹中的文件上传到仓库根目录。`index.html` 必须直接位于根目录，不能再套一层 `dexori.github.io/`；`assets/` 目录保持原样。`.nojekyll` 是隐藏文件，使用 Git 提交时也应包含。
-3. 在仓库的 **Settings → Pages** 中，将 Source 设为 **Deploy from a branch**，选择 **main** 分支和 **/(root)**，保存。若你的分支名称不同，选择实际上传文件的分支。
-4. 等 GitHub Pages 部署完成，再访问 **https://dexori.github.io/**。首次发布可能需要几分钟；失败时看仓库 Actions 中的 Pages 部署日志。
+Upload the **contents** of this directory to the root of the `dexori/dexori.github.io` repository. Do not upload the containing `dexori.github.io/` folder.
 
-官方说明：[创建 GitHub Pages 网站](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)、[配置发布来源](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+The repository root should look like this:
 
-注意：`dexori/dexori` 是 GitHub 个人资料 README 仓库；`dexori/dexori.github.io` 是网站仓库，两者不同。网站中的项目代码链接指向现有的 `dexori/TinyMPC_WheelLeg`。
+```text
+index.html
+style.css
+script.js
+README.md
+.nojekyll
+assets/
+```
 
-## 文件与修改入口
+If the old version is already at the repository root, replace `index.html`, `style.css`, `script.js`, and `README.md`, and upload `assets/portrait.jpg`. Keep the existing robot photographs.
 
-- `index.html`：个人介绍、项目、学校与战队经历、后续兴趣。直接修改里面的文字和链接。
-- `style.css`：颜色、排版和手机布局。主色在文件开头的 `--blue`，背景在 `--paper`。
-- `script.js`：手机导航、当前章节提示、年份更新。没有后端、统计或表单。
-- `assets/`：从个人陈述中提取的三张实车照片。
-- `.nojekyll`：告诉 GitHub Pages 直接发布静态文件。
+In **Settings → Pages**, select **Deploy from a branch**, the branch containing these files (normally `main`), and **/(root)**. The published URL will be `https://dexori.github.io/`. Check the Pages workflow in Actions if publication fails.
 
-所有页面资源都是相对路径，没有外部字体、CDN 或构建工具。
+`.nojekyll` is a hidden file. Use Ctrl+H in the Linux file manager to show it. When uploading the assets folder, preserve its name and directory structure.
 
-浏览器标签页的 `dx` 图标直接写在 `index.html` 的 `<head>` 里，不需要额外下载。
+Official instructions: [creating a Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [configuring the publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-## 内容范围
+## Edit
 
-页面根据提供的简历和个人陈述整理，不附带原始 PDF，不公开手机号、私人邮箱、微信、成绩排名或求职意向。照片仅使用原文中的实车照片。
+- `index.html`: biography, project descriptions, background, and interests.
+- `style.css`: layout, typography, and mobile styles.
+- `script.js`: navigation highlighting and footer year. Reading and navigation also work without JavaScript.
+- `assets/`: portrait extracted from the supplied resume and robot photographs extracted from the personal statement.
+- `.nojekyll`: disables Jekyll processing.
 
-RoboMaster 成绩写为团队成绩；天津大学经历保留“2027.09 拟入学”；没有将缺少作者、收录状态和 DOI 的论文条目写成已发表成果。VLA 数字明确标注小规模实验条件，未发布的项目不放虚构仓库入口。
+The favicon is embedded in the HTML head. All page resources are local; there are no external fonts, analytics, forms, or tracking scripts.
 
-MPC 与碰撞检测项目区分原工程实践和开源提取版，并保留使用边界说明。网站不是新的算法验证报告。
+## Content notes
 
-公开前建议你再确认：拟入学信息是否要展示、VLA 实验结果是否可以公开、实车照片是否适合公开。若不希望展示，直接删除对应 HTML 段落即可。
+The page is based on the supplied resume and personal statement. It does not publish the original PDFs, phone number, private email, or messaging accounts. RoboMaster awards are team results. Tianjin University is listed as a prospective position planned for September 2027, not a current affiliation.
 
-## 本次检查
+The VLA results are explicitly preliminary and limited to the reported evaluation settings. Projects without a public repository have no invented code links. The MPC project distinguishes the original robot work from the extracted open-source modules and retains the observer/model caveats. A publication without confirmed bibliographic details is not listed as a published paper.
 
-已用 Chromium 检查 1440、1024、768、390、320px 宽度下的布局、图片加载、页内锚点、手机导航、Escape 关闭导航、项目详情展开和章节高亮，未发现横向溢出或 JavaScript 运行错误；另外检查了 200% 页面缩放。该检查是本地页面检查，不代表 GitHub Pages 已经发布，也未验证其他浏览器的全部表现。
+## Local checks
+
+The English version was checked in Chromium at 1440, 1024, 768, 390, and 320px viewport widths. Image loading, navigation anchors, expandable notes, navigation highlighting, and English-only page text passed. No horizontal overflow or JavaScript runtime errors were observed. Text enlarged to 200% was checked at 1280, 390, and 320px; reading, navigation, and expandable notes were also checked with JavaScript disabled.
+
+Local browser checks do not establish that GitHub Pages has deployed the same files. Repeat the relevant checks after editing.
