@@ -29,7 +29,7 @@ README.md
 assets/
 ```
 
-If the old version is already at the repository root, replace `index.html`, `style.css`, `script.js`, and `README.md`, and upload `assets/portrait.jpg`. Keep the existing robot photographs.
+If the old version is already at the repository root, replace `index.html`, `style.css`, `script.js`, and `README.md`. Keep the existing robot photographs. If an earlier version uploaded `assets/portrait.jpg`, delete that file from the GitHub repository too; replacing the HTML does not remove previously uploaded assets.
 
 In **Settings → Pages**, select **Deploy from a branch**, the branch containing these files (normally `main`), and **/(root)**. The published URL will be `https://dexori.github.io/`. Check the Pages workflow in Actions if publication fails.
 
@@ -42,7 +42,7 @@ Official instructions: [creating a Pages site](https://docs.github.com/en/pages/
 - `index.html`: biography, project descriptions, background, and interests.
 - `style.css`: layout, typography, and mobile styles.
 - `script.js`: navigation highlighting and footer year. Reading and navigation also work without JavaScript.
-- `assets/`: portrait extracted from the supplied resume and robot photographs extracted from the personal statement.
+- `assets/`: robot photographs extracted from the personal statement. No portrait is included.
 - `.nojekyll`: disables Jekyll processing.
 
 The favicon is embedded in the HTML head. All page resources are local; there are no external fonts, analytics, forms, or tracking scripts.
