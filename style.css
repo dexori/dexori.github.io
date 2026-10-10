@@ -39,6 +39,8 @@ h3 { font-size: 1rem; font-weight: 600; line-height: 1.5; }
 .date { font-size: .8125rem; color: var(--muted); white-space: nowrap; margin: 0; }
 .robot-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 18px 0 12px; }
 .robot-gallery img { display: block; width: 100%; height: auto; }
+.project-media { margin: 18px 0 12px; }
+.project-media img, .project-media video { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
 figcaption { color: var(--muted); font-size: .75rem; line-height: 1.5; margin-top: 6px; }
 .project-links { margin-top: 10px; }
 details { margin-top: 9px; }
