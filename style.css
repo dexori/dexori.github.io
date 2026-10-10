@@ -48,6 +48,7 @@ figcaption { color: var(--muted); font-size: .75rem; line-height: 1.5; margin-to
 .project-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 22px; margin: 4px 0 12px; }
 .project-links a { font-size: .875rem; font-weight: 600; text-decoration: underline; padding: 6px 0; }
 .project-status { margin-top: 12px; }
+.publication-venue { margin-top: 8px; }
 details { margin-top: 9px; }
 summary { width: fit-content; max-width: 100%; color: var(--link); font-size: .875rem; cursor: pointer; padding: 4px 0; }
 summary:hover { text-decoration: underline; text-underline-offset: 3px; }

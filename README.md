@@ -49,9 +49,13 @@ The favicon is embedded in the HTML head. All page resources are local; there ar
 
 ## Content notes
 
-The page is based on the supplied resume and personal statement. It does not publish the original PDFs, phone number, private email, or messaging accounts. RoboMaster awards are team results. Tianjin University is listed as a prospective position planned for September 2027, not a current affiliation.
+The page is based on the supplied resume and personal statement. It does not publish the original resume or personal-statement PDFs, phone number, private email, or messaging accounts. Selected technical reports and the explicitly supplied CaP presentation are included as public project resources. RoboMaster awards are team results. Tianjin University is listed as a prospective position planned for September 2027, not a current affiliation.
 
-The VLA, LIBERO, and CaP results are explicitly limited to their reported evaluation settings. Projects without a public repository have no invented code links. The CaP comparison distinguishes local architecture adapters from official upstream systems. The MPC project distinguishes the original robot work from the extracted open-source modules and retains the observer/model caveats. A publication without confirmed bibliographic details is not listed as a published paper.
+The VLA, LIBERO, and CaP results are explicitly limited to their reported evaluation settings. Projects without a public repository have no invented code links. The CaP comparison distinguishes local architecture adapters from official upstream systems. The MPC project distinguishes the original robot work from the extracted open-source modules and retains the observer/model caveats.
+
+The Publications section, between Projects and Background, lists the paper title and RA-L journal supplied by the owner. Author order, acceptance status, publication year, and DOI have not been provided and are therefore omitted rather than guessed.
+
+The CaP presentation is the supplied 16-page PDF, *Advantages of CaP in Dynamic Embodied Tasks*. The website copy is `assets/cap-dynamic-embodied-tasks.pdf`, with a normal filename; it is not a `file:///` link. Upload this new asset together with the updated HTML and stylesheet. The original desktop PDF is unchanged. The former CaP report is no longer linked.
 
 The RL locomotion project currently covers simulation training only. It does not claim physical-robot deployment, real-robot evaluation, a flat-ground fall rate, or an 8 cm step success rate. The owner's latest clarification supersedes any broader claims in the earlier resume.
 

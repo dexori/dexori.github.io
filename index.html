@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <title>Dexuan Zheng</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172338'/%3E%3Ctext x='9' y='43' font-family='Arial,sans-serif' font-size='31' font-weight='700' letter-spacing='-3' fill='%23fff'%3Edx%3C/text%3E%3Ccircle cx='53' cy='44' r='3' fill='%23799cff'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <script src="script.js?v=2" defer></script>
 </head>
 <body>
@@ -22,6 +22,7 @@
       <nav id="navigation" aria-label="Main navigation">
         <a href="#about" aria-current="location">About</a>
         <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
         <a href="#experience">Background</a>
         <a href="#interests">Interests</a>
       </nav>
@@ -117,7 +118,7 @@
           <header class="project-heading"><h3>Code as Policies for dynamic manipulation</h3><p class="date">Aug. 2026–present</p></header>
           <nav class="project-links" aria-label="Code as Policies resources">
             <a href="https://github.com/dexori/cap-x" target="_blank" rel="noopener noreferrer">GitHub: CaP-X experiments</a>
-            <a href="assets/cap-dynamic-manipulation-report.pdf" target="_blank" rel="noopener noreferrer">Experiment report (PDF, Chinese)</a>
+            <a href="assets/cap-dynamic-embodied-tasks.pdf" target="_blank" rel="noopener noreferrer" title="Advantages of CaP in Dynamic Embodied Tasks">Presentation (PDF)</a>
           </nav>
           <p>I run local Code as Policies experiments for dynamic visual sorting, using Trossen and MuJoCo backends. I integrated skills, task and motion planning (TAMP), and a robot API into a shared evaluation setup for three agent variants.</p>
           <details>
@@ -125,9 +126,17 @@
             <div class="detail-content">
               <p>The task requires three cubes to be placed into numbered bins whose visible labels change after each successful release. A live policy virtual machine allows generated Python control flow to observe the new physical state between macro actions, while TAMP handles reachability, inverse kinematics, and safe trajectories.</p>
               <p>Across seeds 411–413, all three local systems eventually completed the three-decision task. The CaP runtime completed every trial with its first policy, using one planning call and 34.3 primitive actions on average; the two static-plan adapters required three planning rounds and 68.7 actions. The HoloAgent-0 and PhyAgentOS variants are local architecture adapters, not evaluations of their official learned policies or hardware stacks.</p>
-              <p>The GitHub link points to my CaP-X experiment repository. The report documents the local dynamic-sorting comparison described here.</p>
+              <p>The GitHub link points to my CaP-X experiment repository. The presentation, <em>Advantages of CaP in Dynamic Embodied Tasks</em>, documents the local dynamic-sorting comparison described here.</p>
             </div>
           </details>
+        </article>
+      </section>
+
+      <section id="publications" class="section section-anchor" aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications</h2>
+        <article class="publication">
+          <h3>Innovative Development of a Circleg Robot with Multi-Modal Locomotion and Autonomous Fall Recovery</h3>
+          <p class="publication-venue"><em>IEEE Robotics and Automation Letters (RA-L)</em></p>
         </article>
       </section>
 
