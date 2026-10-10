@@ -53,8 +53,14 @@ The page is based on the supplied resume and personal statement. It does not pub
 
 The VLA, LIBERO, and CaP results are explicitly limited to their reported evaluation settings. Projects without a public repository have no invented code links. The CaP comparison distinguishes local architecture adapters from official upstream systems. The MPC project distinguishes the original robot work from the extracted open-source modules and retains the observer/model caveats. A publication without confirmed bibliographic details is not listed as a published paper.
 
+The RL locomotion project currently covers simulation training only. It does not claim physical-robot deployment, real-robot evaluation, a flat-ground fall rate, or an 8 cm step success rate. The owner's latest clarification supersedes any broader claims in the earlier resume.
+
+Project repository links are visible in the introduction. MPC and LIBERO code, reports, and available demo links are directly below their project titles rather than inside expandable notes. The CaP GitHub link is `https://github.com/dexori/cap-x`; it is labeled as a CaP-X experiment repository separately from the local dynamic-sorting report.
+
 ## Local checks
 
-The current version was checked in headless Chrome at 1440px and 390px viewport widths. The page, stylesheet, script, project image, reports, and demo video all returned successfully from the local server, and no horizontal overflow was observed in the checked layouts.
+The current version was checked in Chromium at 1440, 1024, 768, 390, and 320px viewport widths. The page, stylesheet, script, images, PDF reports, and MP4 resource URL returned successfully from the local server. Navigation, expandable notes, English-only page text, and the visible simulation-only RL statement were checked. Project resource links remain outside expandable notes. No horizontal overflow or JavaScript runtime errors were observed.
+
+Text enlarged to 200% was checked at 1280, 390, and 320px. Reading, navigation, and expandable notes also work with JavaScript disabled. The three GitHub repository URLs returned HTTP 200 during this check. Successful file responses do not independently validate the experiment results or guarantee media playback in every browser.
 
 Local browser checks do not establish that GitHub Pages has deployed the same files. Repeat the relevant checks after editing.

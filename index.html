@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <title>Dexuan Zheng</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172338'/%3E%3Ctext x='9' y='43' font-family='Arial,sans-serif' font-size='31' font-weight='700' letter-spacing='-3' fill='%23fff'%3Edx%3C/text%3E%3Ccircle cx='53' cy='44' r='3' fill='%23799cff'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script src="script.js?v=2" defer></script>
 </head>
 <body>
@@ -33,8 +33,14 @@
           <h1 id="name">Dexuan Zheng</h1>
           <p>I’m an undergraduate student in Industrial Intelligence at <strong>Northeastern University, China</strong>, and a member of the T-DT RoboMaster team.</p>
           <p>Since 2023, I have worked on the embedded software and control systems of our infantry and wheel-legged robots. My work includes dynamics modeling, balance control, and deploying model predictive control (MPC) on STM32H7.</p>
-          <p>I also work on reinforcement learning for locomotion, robot imitation learning, and vision-language-action (VLA) models. Recently, I have been studying how SmolVLA responds to changes in instruction wording, comparing ACT with behavior-cloning baselines, and running local experiments with Code as Policies.</p>
+          <p>I also train locomotion policies in simulation and work on robot imitation learning and vision-language-action (VLA) models. Recently, I have been studying how SmolVLA responds to changes in instruction wording, comparing ACT with behavior-cloning baselines, and running local experiments with Code as Policies.</p>
           <p class="profile-links"><a href="https://github.com/dexori" target="_blank" rel="noopener noreferrer">GitHub: dexori</a></p>
+          <nav class="repository-links" aria-label="Project repositories">
+            <span>Project repositories:</span>
+            <a href="https://github.com/dexori/TinyMPC_WheelLeg" target="_blank" rel="noopener noreferrer">Wheel-legged MPC</a>
+            <a href="https://github.com/dexori/LIBERO-Policy-Lab" target="_blank" rel="noopener noreferrer">LIBERO Policy Lab</a>
+            <a href="https://github.com/dexori/cap-x" target="_blank" rel="noopener noreferrer">CaP-X experiments</a>
+          </nav>
         </div>
       </section>
 
@@ -43,19 +49,21 @@
 
         <article class="project">
           <header class="project-heading"><h3>Wheel-legged robots and embedded MPC</h3><p class="date">2023–present</p></header>
+          <nav class="project-links" aria-label="Wheel-legged MPC resources">
+            <a href="https://github.com/dexori/TinyMPC_WheelLeg" target="_blank" rel="noopener noreferrer">GitHub code</a>
+            <a href="assets/tinympc-wheelleg-report.pdf" target="_blank" rel="noopener noreferrer">Technical report (PDF, Chinese)</a>
+          </nav>
           <p>I have worked on the control and embedded software of T-DT’s omnidirectional infantry, serial-leg infantry, and serial-leg hero robots. For the wheel-legged platforms, I developed balance controllers and leg-length-dependent models, and implemented an ADMM-based MPC solver on STM32H7, following TinyMPC.</p>
           <div class="robot-gallery" aria-label="T-DT wheel-legged hero robot">
             <figure><img src="assets/wheelleg-000.jpg" width="398" height="299" alt="Front view of the T-DT wheel-legged hero robot with its legs extended" loading="lazy"><figcaption>Extended legs, front view</figcaption></figure>
             <figure><img src="assets/wheelleg-001.jpg" width="398" height="299" alt="Side view of the T-DT wheel-legged hero robot with its legs extended" loading="lazy"><figcaption>Extended legs, side view</figcaption></figure>
             <figure><img src="assets/wheelleg-002.jpg" width="398" height="299" alt="T-DT wheel-legged hero robot in its lowered configuration" loading="lazy"><figcaption>Lowered configuration</figcaption></figure>
           </div>
-          <p class="project-links"><a href="https://github.com/dexori/TinyMPC_WheelLeg" target="_blank" rel="noopener noreferrer">Code: MPC and collision observer</a></p>
           <details>
             <summary>Implementation notes</summary>
             <div class="detail-content">
               <p>The deployed controller uses a prediction horizon of 8, with 10 states and 4 control inputs. On a 550 MHz STM32H7, one solve takes no more than 4 ms. The model uses CAD mass and inertia parameters; state-space matrices and solver caches are fitted offline across leg lengths, then updated online. This controller has been deployed on our 2026 serial-leg hero robot.</p>
               <p>The repository also includes a five-DoF generalized momentum observer, collision-detection logic, and symbolic M/C/G derivation. It contains only these modules, not the full robot firmware. The numerical model and observer have known limitations; a residual crossing a threshold does not by itself confirm a collision. See the repository README for the test scope and caveats.</p>
-              <p><a href="assets/tinympc-wheelleg-report.pdf">Technical report (Chinese, PDF)</a></p>
             </div>
           </details>
         </article>
@@ -74,12 +82,16 @@
 
         <article class="project">
           <header class="project-heading"><h3>Imitation learning and ACT in LIBERO</h3><p class="date">Sept. 2026–present</p></header>
+          <nav class="project-links" aria-label="LIBERO imitation learning resources">
+            <a href="https://github.com/dexori/LIBERO-Policy-Lab" target="_blank" rel="noopener noreferrer">GitHub code</a>
+            <a href="assets/libero-experiment-report.pdf" target="_blank" rel="noopener noreferrer">Experiment report (PDF)</a>
+            <a href="assets/libero-comparison.mp4" target="_blank" rel="noopener noreferrer">Demo video (MP4, 20 seconds)</a>
+          </nav>
           <p>I built a reproducible single-task imitation-learning pipeline in LIBERO Spatial, implementing State BC, dual-camera Vision BC, RNN BC, Transformer BC, and Action Chunking with Transformers (ACT). The project covers HDF5 observation-action alignment, spatial visual features, sequence modeling, CVAE-style latent variables, action chunks, temporal ensembling, and closed-loop evaluation.</p>
           <figure class="project-media">
             <img src="assets/libero-model-comparison.png" width="1906" height="937" alt="Closed-loop success rates and mean successful trajectory lengths for State BC, RNN BC, Transformer BC, and ACT in one LIBERO Spatial task" loading="lazy">
             <figcaption>Unified closed-loop evaluation on ten fixed initial states. Vision BC is omitted because its final checkpoint was unavailable.</figcaption>
           </figure>
-          <p class="project-links"><a href="https://github.com/dexori/LIBERO-Policy-Lab" target="_blank" rel="noopener noreferrer">Code and reproducibility materials</a> · <a href="assets/libero-experiment-report.pdf">Experiment report</a> · <a href="assets/libero-comparison.mp4">20-second video summary</a></p>
           <details>
             <summary>Protocol, results, and scope</summary>
             <div class="detail-content">
@@ -90,26 +102,30 @@
         </article>
 
         <article class="project">
-          <header class="project-heading"><h3>Sim-to-real locomotion for a serial-leg robot</h3><p class="date">Mar. 2026–present</p></header>
-          <p>I am building a training and deployment pipeline in Isaac Lab with rsl_rl. The policy uses PPO, an LSTM, and proprioceptive observations for velocity tracking and balance on flat ground, slopes, and steps.</p>
+          <header class="project-heading"><h3>Reinforcement learning for serial-leg locomotion</h3><p class="date">Mar. 2026–present</p></header>
+          <p>I have completed simulation-based locomotion training in Isaac Lab with rsl_rl. The policy uses PPO, an LSTM, and proprioceptive observations for velocity tracking and balance.</p>
+          <p class="project-status"><strong>Current scope: simulation training only.</strong> The policy has not been deployed or evaluated on a physical robot.</p>
           <details>
-            <summary>Training and deployment</summary>
+            <summary>Simulation training</summary>
             <div class="detail-content">
-              <p>My work includes observation and reward design, policy structure, and deployment. I track falls and velocity-following behavior, and investigate how differences between the simulated model and the physical robot affect the policy.</p>
-              <p>In the reported real-robot tests, the flat-ground fall rate decreased from nearly 100% to a single-digit percentage, and the blind policy crossed an 8 cm step in approximately 84% of trials.</p>
+              <p>My work covers observation and reward design, policy structure, and training in simulation. I inspect simulated rollouts to study balance and velocity-following behavior. Sim-to-real transfer remains a future direction, not a completed result of this project.</p>
             </div>
           </details>
         </article>
 
         <article class="project">
           <header class="project-heading"><h3>Code as Policies for dynamic manipulation</h3><p class="date">Aug. 2026–present</p></header>
+          <nav class="project-links" aria-label="Code as Policies resources">
+            <a href="https://github.com/dexori/cap-x" target="_blank" rel="noopener noreferrer">GitHub: CaP-X experiments</a>
+            <a href="assets/cap-dynamic-manipulation-report.pdf" target="_blank" rel="noopener noreferrer">Experiment report (PDF, Chinese)</a>
+          </nav>
           <p>I run local Code as Policies experiments for dynamic visual sorting, using Trossen and MuJoCo backends. I integrated skills, task and motion planning (TAMP), and a robot API into a shared evaluation setup for three agent variants.</p>
           <details>
             <summary>Experiment setup and results</summary>
             <div class="detail-content">
               <p>The task requires three cubes to be placed into numbered bins whose visible labels change after each successful release. A live policy virtual machine allows generated Python control flow to observe the new physical state between macro actions, while TAMP handles reachability, inverse kinematics, and safe trajectories.</p>
               <p>Across seeds 411–413, all three local systems eventually completed the three-decision task. The CaP runtime completed every trial with its first policy, using one planning call and 34.3 primitive actions on average; the two static-plan adapters required three planning rounds and 68.7 actions. The HoloAgent-0 and PhyAgentOS variants are local architecture adapters, not evaluations of their official learned policies or hardware stacks.</p>
-              <p><a href="assets/cap-dynamic-manipulation-report.pdf">Experiment presentation (Chinese, PDF)</a></p>
+              <p>The GitHub link points to my CaP-X experiment repository. The report documents the local dynamic-sorting comparison described here.</p>
             </div>
           </details>
         </article>
