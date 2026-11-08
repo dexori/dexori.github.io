@@ -51,7 +51,7 @@ The favicon is embedded in the HTML head. All page resources are local; there ar
 
 The page is based on the supplied resume and personal statement. It does not publish the original resume or personal-statement PDFs, phone number, private email, or messaging accounts. Selected technical reports and the explicitly supplied CaP presentation are included as public project resources. RoboMaster awards are team results. Tianjin University is listed as a prospective position planned for September 2027, not a current affiliation.
 
-The VLA, LIBERO, and CaP results are explicitly limited to their reported evaluation settings. Projects without a public repository have no invented code links. The CaP comparison distinguishes local architecture adapters from official upstream systems. The MPC project distinguishes the original robot work from the extracted open-source modules and retains the observer/model caveats.
+The VLA, desktop grasping, and PhyAgent closed-loop results are explicitly limited to their reported evaluation settings. Projects without a public repository have no invented code links. The PhyAgent and G1Pilot integration distinguishes local architecture adapters from official upstream systems. The MPC project distinguishes the original robot work from the extracted open-source modules and retains the observer/model caveats.
 
 The Publications section, between Projects and Background, lists the paper title and RA-L journal supplied by the owner. Author order, acceptance status, publication year, and DOI have not been provided and are therefore omitted rather than guessed.
 
@@ -59,7 +59,7 @@ The CaP presentation is the supplied 16-page PDF, *Advantages of CaP in Dynamic 
 
 The RL locomotion project currently covers simulation training only. It does not claim physical-robot deployment, real-robot evaluation, a flat-ground fall rate, or an 8 cm step success rate. The owner's latest clarification supersedes any broader claims in the earlier resume.
 
-Project repository links are visible in the introduction. MPC and LIBERO code, reports, and available demo links are directly below their project titles rather than inside expandable notes. The CaP GitHub link is `https://github.com/dexori/cap-x`; it is labeled as a CaP-X experiment repository separately from the local dynamic-sorting report.
+Project repository links are visible in the introduction. MPC code and report links are directly below the project title rather than inside expandable notes. The PhyAgentG1 and CaP-X GitHub links are `https://github.com/dexori/PhyAgentG1` and `https://github.com/dexori/cap-x`.
 
 ## Local checks
 
